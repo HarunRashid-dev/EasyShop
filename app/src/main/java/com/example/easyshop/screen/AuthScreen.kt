@@ -1,6 +1,5 @@
 package com.example.easyshop.screen
 
-import android.R.attr.onClick
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,10 +21,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.easyshop.R
 
 @Composable
-fun AuthScreen(modifier: Modifier = Modifier){
+fun AuthScreen(modifier: Modifier = Modifier, navController: NavHostController){
     Column (
         modifier = modifier
             .fillMaxSize()
@@ -59,7 +60,9 @@ fun AuthScreen(modifier: Modifier = Modifier){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { },
+        Button(onClick = {
+            navController.navigate("login")
+        },
             modifier= Modifier.fillMaxWidth()
                 .height(60.dp)
             ){
@@ -68,7 +71,9 @@ fun AuthScreen(modifier: Modifier = Modifier){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { },
+        OutlinedButton(onClick = {
+            navController.navigate("Signup")
+        },
             modifier= Modifier.fillMaxWidth()
                 .height(60.dp)
         ){
