@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun SingupScreen (modifier: Modifier = Modifier){
-    Text(text="Singup")
-
+fun SignupScreen (modifier: Modifier = Modifier){
+    Text(text="Signup")
 }

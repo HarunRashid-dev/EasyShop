@@ -72,7 +72,7 @@ fun AuthScreen(modifier: Modifier = Modifier, navController: NavHostController){
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedButton(onClick = {
-            navController.navigate("Signup")
+            navController.navigate("signup")
         },
             modifier= Modifier.fillMaxWidth()
                 .height(60.dp)

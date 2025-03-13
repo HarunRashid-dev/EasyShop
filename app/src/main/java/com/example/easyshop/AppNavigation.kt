@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.easyshop.screen.AuthScreen
 import com.example.easyshop.screen.LoginScreen
-import com.example.easyshop.screen.SingupScreen
+import com.example.easyshop.screen.SignupScreen
 
 
 @Composable
@@ -25,8 +25,8 @@ fun AppNavigation(modifier : Modifier = Modifier){
             LoginScreen(modifier)
         }
 
-        composable("singup") {
-            SingupScreen(modifier)
+        composable("signup") {
+            SignupScreen(modifier)
         }
 
     }
