@@ -1,6 +1,6 @@
 package com.example.easyshop.screen
 
-import android.R
+import com.example.easyshop.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,6 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.runtime.getValue
+
 
 @Composable
 fun SignupScreen (modifier: Modifier = Modifier){
@@ -70,7 +72,7 @@ fun SignupScreen (modifier: Modifier = Modifier){
             contentDescription = "Login Banner",
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp)
+                .height(200.dp)
         )
 
         Spacer(modifier = Modifier.height(20.dp))
