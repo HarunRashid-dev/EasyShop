@@ -26,11 +26,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.easyshop.AppUtil
+import com.example.easyshop.viewmodel.AuthViewModel
 
 
 @Composable
-fun SignupScreen (modifier: Modifier = Modifier){
+fun SignupScreen (modifier: Modifier = Modifier,authViewModel: AuthViewModel = viewModel()){
 
     var email by remember {
         mutableStateOf("")
@@ -43,6 +47,8 @@ fun SignupScreen (modifier: Modifier = Modifier){
     var password by remember {
         mutableStateOf("")
     }
+
+    var context = LocalContext.current
 
     Column(
         modifier = modifier.fillMaxSize()
@@ -120,6 +126,13 @@ fun SignupScreen (modifier: Modifier = Modifier){
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
+            authViewModel.signup(email,name,password){success,errorMessage->
+                if(success) {
+
+                }else{
+                    AppUtil.showToast(context,errorMessage?:"Something went wrong")
+                }
+            }
         },
             modifier= Modifier.fillMaxWidth()
                 .height(60.dp)
