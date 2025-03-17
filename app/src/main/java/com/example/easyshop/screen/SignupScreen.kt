@@ -29,12 +29,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.easyshop.AppUtil
 import com.example.easyshop.viewmodel.AuthViewModel
 
 
 @Composable
-fun SignupScreen (modifier: Modifier = Modifier,authViewModel: AuthViewModel = viewModel()){
+fun SignupScreen (modifier: Modifier = Modifier,navController: NavController,authViewModel: AuthViewModel = viewModel()){
 
     var email by remember {
         mutableStateOf("")
@@ -128,7 +129,9 @@ fun SignupScreen (modifier: Modifier = Modifier,authViewModel: AuthViewModel = v
         Button(onClick = {
             authViewModel.signup(email,name,password){success,errorMessage->
                 if(success) {
-
+                    navController.navigate("home"){
+                        popUpTo("auth"){inclusive = true}
+                    }
                 }else{
                     AppUtil.showToast(context,errorMessage?:"Something went wrong")
                 }
