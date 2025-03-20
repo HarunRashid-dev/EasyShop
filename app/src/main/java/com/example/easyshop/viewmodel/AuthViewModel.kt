@@ -12,7 +12,11 @@ class AuthViewModel : ViewModel() {
 
     private val firestore = Firebase.firestore
 
-    fun login(){
+    fun login(email: String, password: String){
+        auth.signInWithEmailLinkAndPassword(email,password)
+            .addOnCompleteListener{
+
+            }
 
     }
 
@@ -39,4 +43,10 @@ class AuthViewModel : ViewModel() {
             }
     }
 
+}
+
+private fun FirebaseAuth.signInWithEmailLinkAndPassword(
+    string: String,
+    string: String
+) {
 }
